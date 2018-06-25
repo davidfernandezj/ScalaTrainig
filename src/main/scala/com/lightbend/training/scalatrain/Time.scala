@@ -11,8 +11,9 @@ object Time {
 
 }
 
-class Time(val hours:Int = 0, val minutes:Int = 0) {
+case class Time(hours:Int = 0, minutes:Int = 0) {
 
+  //Error control
   require(hours >= 0 && hours < Time.hoursPerDay, "The hours should be between 0 and 23")
   require(minutes >=0 && minutes < Time.minutesPerHours, "The minutes should be between 0 and 59")
 
